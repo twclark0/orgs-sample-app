@@ -14,11 +14,11 @@ export default function Index() {
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-gray-700">
-                Notus React - A beautiful extension for Tailwind CSS.
+                Chat0 - A beautiful extension for Tailwind CSS.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600">
-                Notus React is Free and Open Source. It does not change or add
-                any CSS to the already one from{" "}
+                Chat0 is Free and Open Source. It does not change or add any CSS
+                to the already one from{" "}
                 <a
                   href="https://tailwindcss.com/?ref=creativetim"
                   className="text-gray-700"
@@ -122,7 +122,7 @@ export default function Index() {
                         CSS Components
                       </h6>
                       <p className="mb-4 text-gray-600">
-                        Notus React comes with a huge number of Fully Coded CSS
+                        Chat0 comes with a huge number of Fully Coded CSS
                         components.
                       </p>
                     </div>
@@ -165,7 +165,7 @@ export default function Index() {
                       </h6>
                       <p className="mb-4 text-gray-600">
                         Built by developers for developers. You will love how
-                        easy is to to work with Notus React.
+                        easy is to to work with Chat0.
                       </p>
                     </div>
                   </div>
@@ -484,7 +484,7 @@ export default function Index() {
                 className="max-w-full rounded-lg shadow-xl"
                 style={{
                   transform:
-                    "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)",
+                    "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)"
                 }}
                 src={require("assets/img/documentation.png")}
               />
@@ -496,9 +496,9 @@ export default function Index() {
           <div className="w-full md:w-6/12 px-12 md:px-4">
             <h2 className="font-semibold text-4xl">Beautiful Example Pages</h2>
             <p className="text-lg leading-relaxed mt-4 mb-4 text-gray-600">
-              Notus React is a completly new product built using our past
-              experience in web templates. Take the examples we made for you and
-              start playing with them.
+              Chat0 is a completly new product built using our past experience
+              in web templates. Take the examples we made for you and start
+              playing with them.
             </p>
           </div>
         </div>
