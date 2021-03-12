@@ -9,7 +9,7 @@ const IndexDropdown = () => {
   const popoverDropdownRef = React.createRef();
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "bottom-start",
+      placement: "bottom-start"
     });
     setDropdownPopoverShow(true);
   };
@@ -18,17 +18,6 @@ const IndexDropdown = () => {
   };
   return (
     <>
-      <a
-        className="hover:text-gray-600 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-        href="#pablo"
-        ref={btnDropdownRef}
-        onClick={(e) => {
-          e.preventDefault();
-          dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
-        }}
-      >
-        Demo Pages
-      </a>
       <div
         ref={popoverDropdownRef}
         className={
