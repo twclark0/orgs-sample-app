@@ -1,13 +1,11 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
-// components
-
-import PagesDropdown from "components/Dropdowns/PagesDropdown.js";
-
-export default function Navbar(props) {
+export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   return (
     <>
       <nav className="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
@@ -37,9 +35,6 @@ export default function Navbar(props) {
             <ul className="flex flex-col lg:flex-row list-none mr-auto"></ul>
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="flex items-center">
-                <PagesDropdown />
-              </li>
-              <li className="flex items-center">
                 <a className="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg " />
                   <span className="lg:hidden inline-block ml-2">Share</span>
@@ -60,12 +55,23 @@ export default function Navbar(props) {
                 </a>
               </li>
               <li className="flex items-center">
-                <a
-                  className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                  href="/auth"
-                >
-                  <i className="fas fa-lock"></i> Login
-                </a>
+                {isAuthenticated ? (
+                  <button
+                    className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => logout({ returnTo: window.location.origin })}
+                  >
+                    Sign out
+                  </button>
+                ) : (
+                  <button
+                    className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => loginWithRedirect()}
+                  >
+                    Log In
+                  </button>
+                )}
               </li>
             </ul>
           </div>
