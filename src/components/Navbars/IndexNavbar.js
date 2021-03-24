@@ -16,6 +16,10 @@ export default function Navbar(props) {
               to="/"
               className="text-gray-800 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
             >
+              <img
+                style={{ height: "40px" }}
+                src="https://cdn.auth0.com/blog/chat0/logo.jpeg"
+              />
               Chat0
             </Link>
             <button
