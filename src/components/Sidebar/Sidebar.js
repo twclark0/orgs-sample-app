@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
 import UserDropdown from "components/Dropdowns/UserDropdown.js";
 import { useAuth0 } from "@auth0/auth0-react";
+import { organizationMetaData } from "../../organizations/organizations";
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   const { user } = useAuth0();
+  const currentOrg = organizationMetaData.find((o) => o.id === user?.org_id);
+
   return (
     <>
       <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
@@ -27,9 +30,9 @@ export default function Sidebar() {
           >
             <img
               style={{ height: "40px", marginRight: 8 }}
-              src={user && user["https://ourorg.com/data"].logo}
+              src={currentOrg?.logo}
             />
-            {user && user["https://ourorg.com/name"]}
+            {currentOrg?.display_name}
           </Link>
           <ul className="md:hidden items-center flex flex-wrap list-none">
             <li className="inline-block relative">
