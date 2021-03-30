@@ -37,6 +37,7 @@ ReactDOM.render(
     domain="dev-rm3u1yq4.auth0.com"
     clientId="OgdvG5snvJGpeIrW9FKXbB5D9UmSQufP"
     redirectUri={window.location.origin}
+    organization={localStorage.getItem("organization_id")}
   >
     <App />
   </Auth0Provider>,
