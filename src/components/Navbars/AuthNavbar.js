@@ -17,8 +17,8 @@ export default function Navbar() {
               to="/"
             >
               <img
-                style={{ height: "40px" }}
-                src="https://cdn.auth0.com/blog/chat0/logo.jpeg"
+                style={{ height: "40px", marginRight: 5 }}
+                src="https://cdn.auth0.com/blog/orgs/chat0-logo-2.jpeg"
               />
               Chat0
             </Link>

@@ -37,7 +37,10 @@ export default function Navbar() {
               <button
                 className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                 type="button"
-                onClick={() => logout({ returnTo: window.location.origin })}
+                onClick={() => {
+                  localStorage.removeItem("organization_id");
+                  logout({ returnTo: window.location.origin });
+                }}
               >
                 Sign out
               </button>
